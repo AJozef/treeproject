@@ -1,0 +1,16 @@
+# Файлы кэша Python
+__pycache__/
+*.pyc
+
+# База данных
+db.sqlite3
+*.sqlite3
+
+# Настройки IDE (VSCode, PyCharm)
+.vscode/
+.idea/
+
+# Виртуальное окружение
+venv/
+env/
+.env

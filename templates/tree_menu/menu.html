@@ -1,0 +1,7 @@
+{% load tree_menu_tags %}
+
+<ul class="tree-menu tree-menu-{{ menu_name }}">
+  {% for node in root_items %}
+    {% include "tree_menu/menu_branch.html" with node=node %}
+  {% endfor %}
+</ul>

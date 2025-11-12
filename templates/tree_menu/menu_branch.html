@@ -1,0 +1,23 @@
+{% load tree_menu_tags %}
+
+<li{% if node.id == active_id or node.id in expanded_ids %}
+      class="{% if node.id == active_id %}active{% endif %}{% if node.id == active_id and node.id in expanded_ids %} {% endif %}{% if node.id in expanded_ids %}expanded{% endif %}"
+    {% endif %}>
+  <a href="{{ node.resolved_url }}">{{ node.title }}</a>
+
+  {% with child_ids=children_map|get_item:node.id %}
+    {% if child_ids and node.id in expanded_ids %}
+      <ul>
+        {% for child_id in child_ids %}
+          {% with child_node=items_by_id|get_item:child_id %}
+            {% if node.id == active_id %}
+              <li><a href="{{ child_node.resolved_url }}">{{ child_node.title }}</a></li>
+            {% else %}
+              {% include "tree_menu/menu_branch.html" with node=child_node %}
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+</li>
