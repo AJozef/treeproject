@@ -25,7 +25,7 @@
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone [URL-вашего-репозитория]
+    git clone https://github.com/AJozef/treeproject
     cd treeproject
     ```
 
