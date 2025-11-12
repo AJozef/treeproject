@@ -152,7 +152,7 @@
 <nav>
   {% draw_menu 'main_menu' %}
 </nav>
-
+```
 ## ✅ Тесты
 
 Проект включает набор тестов для `tree_menu` в файле `tree_menu/tests.py`.
